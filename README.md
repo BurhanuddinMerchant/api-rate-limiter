@@ -95,7 +95,9 @@ To Test the Rate Limiting Feature go to:
 
 http://localhost:3000/api/getData
 
-On Your Browser, and try hitting the url 20 times within a minute, on crossing that threshold within a minute, you won't be able to access that endpoint
+On Your Browser, and try hitting the url 20 times within a minute, on crossing that threshold within a minute, you won't be able to access that endpoint.
+
+As Redis is ACID compliant, it ensures that the rate is never exceded,as at one given time only one updation is allowed to a single resource.
 
 <b>NOTE : This will limit the requests to 20 as a whole instead of tracking for individual users</b>
 
