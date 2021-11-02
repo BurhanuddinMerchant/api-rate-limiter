@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.docker
+    links:
+      - redis
+  redis:
+    image: "redis:alpine"
+    ports:
+      - 6380:6379
+    restart: unless-stopped
